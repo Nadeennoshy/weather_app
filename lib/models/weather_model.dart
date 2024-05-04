@@ -14,11 +14,11 @@ class WeatherModel
     return WeatherModel(
       cityName: json['location']['name'], 
       date: json['current']['last_updated'], 
-      weatherImage: json['forecast']['forecastday']['day']['condition']['icon'], 
+      weatherImage: json['forecast']['forecastday'][0]['day']['condition']['icon'], 
       // weatherImage: json['forecast']['forecastday'][0]['day']['condition']['icon'], 
-      temp: json['forecast']['forecastday']['day']['avgtemp_c'], 
-      maxTemp: json['forecast']['forecastday']['day']['maxtemp_c'], 
-      minTemp: json['forecast']['forecastday']['day']['mintemp_c'], 
-      weatherState: json['forecast']['forecastday']['day']['condition']['text']);
+      temp: json['forecast']['forecastday'][0]['day']['avgtemp_c'], 
+      maxTemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'], 
+      minTemp: json['forecast']['forecastday'][0]['day']['mintemp_c'], 
+      weatherState: json['forecast']['forecastday'][0]['day']['condition']['text']);
   }
 }

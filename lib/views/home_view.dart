@@ -19,7 +19,7 @@ class HomeView extends StatelessWidget {
                   return const SearchView();
                 },),);
               },
-              icon: Icon(Icons.search,)),
+              icon: const Icon(Icons.search,)),
           ),
         ],
       ),
