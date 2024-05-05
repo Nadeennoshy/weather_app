@@ -17,7 +17,7 @@ class SearchView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: TextField(
             onSubmitted: ((value) async {
-              weatherModel = await WeatherService(Dio()).getCurrentWeather(cityName: value);
+              weatherModel = await WeatherService(Dio()).getWeather(cityName: value);
               // WeatherModel weatherModel = await WeatherService(Dio()).getCurrentWeather(cityName: value);
               // log(weatherModel.cityName);
               Navigator.pop(context);
