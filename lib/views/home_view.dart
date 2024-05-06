@@ -13,10 +13,11 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Weather App',
-        style: TextStyle(
-          color: Colors.white,
-        ),
+        title: const Text(
+          'Weather App',
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
         actions: [
           Padding(
@@ -37,12 +38,14 @@ class HomeView extends StatelessWidget {
           ),
         ],
       ),
-      body: BlocBuilder<GetWeatherCubit,WeatherState>(
+      body: BlocBuilder<GetWeatherCubit, WeatherState>(
         builder: (context, state) {
           if (state is InitialWeatherState) {
             return const NoWeatherBody();
           } else if (state is WeatherLoadedState) {
-            return  WeatherInfoBody(weather: state.weatherModel,);
+            return WeatherInfoBody(
+              weather: state.weatherModel,
+            );
           } else {
             return const Text('OOPS, There was an error try again !');
           }
