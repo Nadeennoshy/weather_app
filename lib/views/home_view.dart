@@ -34,6 +34,7 @@ class HomeView extends StatelessWidget {
                 },
                 icon: const Icon(
                   Icons.search,
+                  color: Colors.white,
                 )),
           ),
         ],
@@ -47,7 +48,13 @@ class HomeView extends StatelessWidget {
               weather: state.weatherModel,
             );
           } else {
-            return const Text('OOPS, There was an error try again !');
+            return const AlertDialog(
+              icon: Icon(Icons.error_outline,color: Colors.red,),
+              title: Text('OOPS! City name is wrong 🤦‍♀️Try Again'),
+              actions: [
+              ],
+            );
+            
           }
         },
       ),
