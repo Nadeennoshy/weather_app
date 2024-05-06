@@ -17,7 +17,7 @@ class WeatherInfoBody extends StatelessWidget {
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),),
-        Text('updated at: ${weatherModel.date}'),
+        Text('updated at: ${weatherModel.date.hour}:${weatherModel.date.minute}'),
         const SizedBox(height: 20,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
